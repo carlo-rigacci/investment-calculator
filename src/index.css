@@ -14,12 +14,6 @@ body {
   color: #e1eeeb;
 }
 
-.input-group {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1.5rem;
-}
-
 .form label {
   display: block;
   margin-bottom: 0.25rem;
