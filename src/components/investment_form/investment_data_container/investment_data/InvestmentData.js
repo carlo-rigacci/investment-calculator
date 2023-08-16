@@ -1,10 +1,10 @@
-import 'InvestmentData.css';
+import './InvestmentData.css';
 
-export default function InvestmentData() {
+export default function InvestmentData({ name, id }) {
   return (
     <p>
-      <label></label>
-      <input />
+      <label htmlFor={id}>{name}</label>
+      <input type='number' id={id} />
     </p>
   );
 }

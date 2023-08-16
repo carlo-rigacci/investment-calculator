@@ -4,8 +4,17 @@ import InvestmentDataContainer from './investment_data_container/InvestmentDataC
 export default function InvestmentForm() {
   return (
     <form className='form'>
-      <InvestmentDataContainer />
-      <InvestmentDataContainer />
+      <InvestmentDataContainer
+        nameArray={['Current Savings ($)', 'Yearly Savings ($)']}
+        idArray={['current-savings', 'yearly-contribution']}
+      />
+      <InvestmentDataContainer
+        nameArray={[
+          'Expected Interest (%, per year)',
+          'Investment Duration (years)',
+        ]}
+        idArray={['expected-return', 'duration']}
+      />
     </form>
   );
 }

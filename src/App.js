@@ -1,4 +1,5 @@
 import Header from './components/header/Header';
+import InvestmentForm from './components/investment_form/InvestmentForm';
 
 function App() {
   const calculateHandler = (userInput) => {
@@ -31,7 +32,8 @@ function App() {
   return (
     <div>
       <Header />
-      <form className='form'>
+      <InvestmentForm />
+      {/* <form className='form'>
         <div className='input-group'>
           <p>
             <label htmlFor='current-savings'>Current Savings ($)</label>
@@ -62,7 +64,7 @@ function App() {
             Calculate
           </button>
         </p>
-      </form>
+      </form> */}
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
