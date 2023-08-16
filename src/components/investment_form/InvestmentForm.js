@@ -3,9 +3,9 @@ import InvestmentDataContainer from './investment_data_container/InvestmentDataC
 
 export default function InvestmentForm() {
   return (
-  <form className='form'>
-    <InvestmentDataContainer/>
-    <InvestmentDataContainer/>
-  </form>
+    <form className='form'>
+      <InvestmentDataContainer />
+      <InvestmentDataContainer />
+    </form>
   );
 }

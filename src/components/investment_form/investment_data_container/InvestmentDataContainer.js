@@ -1,5 +1,5 @@
 import './InvestmentDataContainer.css';
-import InvestmentData from './investment_data/InvestmentData'
+import InvestmentData from './investment_data/InvestmentData';
 
 export default function InvestmentDataContainer() {
   return (
