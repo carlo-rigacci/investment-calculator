@@ -1,11 +1,11 @@
 import './InvestmentData.css';
 import { useState } from 'react';
 
-export default function InvestmentData({ name, id, tag, onChildChange }) {
+export default function InvestmentData({ name, id, tag, onUpdate }) {
   const [inputState, setInputState] = useState('');
   const onChangeHandler = (event) => {
     setInputState(event.target.value);
-    onChildChange(event);
+    onUpdate(event);
   };
 
   return (

@@ -20,20 +20,17 @@ const initialState = {
 export default function InvestmentForm() {
   const [formState, setFormState] = useState(initialState);
 
-  const onInputUpdateHandler = ({ target: { name, value } }) => {
+  const onUpdateHandler = ({ target: { name, value } }) => {
     setFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  console.log(formState);
-  console.log('test');
-
   return (
     <form className='form'>
       <InvestmentDataContainer
-        onInputUpdate={onInputUpdateHandler}
+        onUpdate={onUpdateHandler}
         metadata={[
           new Metadata(
             'Current Savings ($)',
@@ -48,7 +45,7 @@ export default function InvestmentForm() {
         ]}
       />
       <InvestmentDataContainer
-        onInputUpdate={onInputUpdateHandler}
+        onUpdate={onUpdateHandler}
         metadata={[
           new Metadata(
             'Expected Interest (%, per year)',

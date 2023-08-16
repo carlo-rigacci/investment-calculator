@@ -29,6 +29,8 @@ function App() {
     // do something with yearlyData ...
   };
 
+
+
   return (
     <div>
       <Header />
