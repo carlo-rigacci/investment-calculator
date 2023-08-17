@@ -18,7 +18,7 @@ const initialState = {
   duration: 0,
 };
 
-export default function InvestmentForm() {
+export default function InvestmentForm({calculateHandler}) {
 
   const [formState, setFormState] = useState(initialState);
 
@@ -31,7 +31,7 @@ export default function InvestmentForm() {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(formState);
+    calculateHandler(formState)
   }
 
   return (
