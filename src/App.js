@@ -17,16 +17,19 @@ function App() {
     const yearlyContribution = +userInput['yearlyContribution']; // as mentioned: feel free to change the shape...
     const expectedReturn = +userInput['expectedReturn'] / 100;
     const duration = +userInput['duration'];
+    let totalInterest = 0;
 
     // The below code calculates yearly results (total savings, interest etc)
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
+      totalInterest += yearlyInterest;
       currentSavings += yearlyInterest + yearlyContribution;
       yearlyData.push({
         // feel free to change the shape of the data pushed to the array!
         year: i + 1,
-        yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
+        yearlyInterest: yearlyInterest,
+        totalInterest: totalInterest,
         yearlyContribution: yearlyContribution,
       });
     }
