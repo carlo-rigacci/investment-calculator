@@ -1,6 +1,7 @@
 import './InvestmentForm.css';
 import InvestmentDataContainer from './investment_data_container/InvestmentDataContainer';
 import { useState } from 'react';
+import FormActions from './form_actions/FormActions';
 
 class Metadata {
   constructor(name, id, tag) {
@@ -18,6 +19,7 @@ const initialState = {
 };
 
 export default function InvestmentForm() {
+
   const [formState, setFormState] = useState(initialState);
 
   const onUpdateHandler = ({ target: { name, value } }) => {
@@ -27,8 +29,13 @@ export default function InvestmentForm() {
     }));
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log(formState);
+  }
+
   return (
-    <form className='form'>
+    <form onSubmit={submitHandler} className='form'>
       <InvestmentDataContainer
         onUpdate={onUpdateHandler}
         metadata={[
@@ -55,6 +62,7 @@ export default function InvestmentForm() {
           new Metadata('Investment Duration (years)', 'duration', 'duration'),
         ]}
       />
+      <FormActions />
     </form>
   );
 }
