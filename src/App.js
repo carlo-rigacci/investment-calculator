@@ -1,13 +1,13 @@
 import Header from './components/header/Header';
 import InvestmentForm from './components/investment_form/InvestmentForm';
 import { useState } from 'react';
+import Table from './components/table/Table';
 
 function App() {
 
   const [annualDataState, setAnnualData] = useState([]);
 
   const calculateHandler = (userInput) => {
-    console.log(userInput);
     // Should be triggered when form is submitted
     // You might not directly want to bind it to the submit event on the form though...
 
@@ -35,7 +35,7 @@ function App() {
     }
 
     // do something with yearlyData ...
-    console.log(yearlyData);
+    setAnnualData(yearlyData);
   };
 
 
@@ -47,27 +47,8 @@ function App() {
       
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
+      {annualDataState.length > 0 ? <Table yearlyData={annualDataState}/> : <p>no data</p>}
 
-      <table className='result'>
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Total Savings</th>
-            <th>Interest (Year)</th>
-            <th>Total Interest</th>
-            <th>Invested Capital</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>YEAR NUMBER</td>
-            <td>TOTAL SAVINGS END OF YEAR</td>
-            <td>INTEREST GAINED IN YEAR</td>
-            <td>TOTAL INTEREST GAINED</td>
-            <td>TOTAL INVESTED CAPITAL</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   );
 }

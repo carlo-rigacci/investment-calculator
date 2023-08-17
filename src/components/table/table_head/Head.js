@@ -4,7 +4,7 @@ import Row from '../table_row/Row';
 export default function Head() {
   return (
     <thead>
-      <Row />
+      {/* <Row /> */}
     </thead>
   );
 }
