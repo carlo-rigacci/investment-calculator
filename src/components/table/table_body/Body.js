@@ -5,7 +5,7 @@ export default function Body({ yearlyData }) {
   return (
     <tbody>
       {yearlyData.map((data, index) => (
-        <Row key={index} dataForTheYear={data} />
+        <Row key={index} dataSet={data} />
       ))}
     </tbody>
   );

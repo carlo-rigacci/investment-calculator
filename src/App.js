@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Table from './components/table/Table';
 
 function App() {
-
   const [annualDataState, setAnnualData] = useState([]);
 
   const calculateHandler = (userInput) => {
@@ -38,17 +37,18 @@ function App() {
     setAnnualData(yearlyData);
   };
 
-
-
   return (
     <div>
       <Header />
-      <InvestmentForm calculateHandler={calculateHandler}/>
-      
+      <InvestmentForm calculateHandler={calculateHandler} />
+
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
-      {annualDataState.length > 0 ? <Table yearlyData={annualDataState}/> : <p>no data</p>}
-
+      {annualDataState.length > 0 ? (
+        <Table yearlyData={annualDataState} />
+      ) : (
+        <p>no data</p>
+      )}
     </div>
   );
 }

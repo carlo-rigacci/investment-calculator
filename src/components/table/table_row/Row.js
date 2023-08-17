@@ -1,7 +1,7 @@
-export default function Row({ dataForTheYear }) {
+export default function Row({ dataSet }) {
   return (
     <tr>
-      {Object.values(dataForTheYear).map((data, index) => (
+      {Object.values(dataSet).map((data, index) => (
         <td key={index}>{data}</td>
       ))}
     </tr>
