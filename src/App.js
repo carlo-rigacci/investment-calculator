@@ -47,7 +47,7 @@ function App() {
       {annualDataState.length > 0 ? (
         <Table yearlyData={annualDataState} />
       ) : (
-        <p>no data</p>
+        <p style={{display: 'flex', justifyContent: 'center'}}>NO DATA</p>
       )}
     </div>
   );
